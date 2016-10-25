@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>折叠菜单</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        #menu h3{
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+        }
+        #menu .main-menu {
+
+            background-color: black;
+            color: white;
+            width: 100px;
+
+        }
+        #menu .sub-menu{
+            background-color: grey;
+            width: 100px;
+            display: none;
+        }
+        #menu .sub-menu li{
+            border-bottom: 1px dashed black;
+        }
+        #menu .sub-menu a{
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            display: block;
+
+
+        }
+    </style>
+</head>
+<body>
+
+<ul id="menu">
+    <li class="main-menu">
+        <h3>link1</h3>
+        <ul class="sub-menu">
+            <li><a href="#">sublink1</a></li>
+            <li><a href="#">sublink2</a></li>
+            <li><a href="#">sublink3</a></li>
+        </ul>
+    </li>
+    <li class="main-menu">
+        <h3>link2</h3>
+        <ul class="sub-menu">
+            <li><a href="#">sublink1</a></li>
+            <li><a href="#">sublink2</a></li>
+            <li><a href="#">sublink3</a></li>
+        </ul>
+    </li>
+</ul>
+<script>
+    var oUl=document.getElementById('menu');
+    var aLi=oUl.getElementsByTagName('li');
+    for(var i=0;i<aLi.length;i++){
+        if(aLi[i].className=='main-menu'){
+            aLi[i].onclick=function () {
+                var oSub=this.children[1];
+                if(oSub.style.display=='none'||){
+                    oSub.style.display='block';
+                }
+                else {
+                    oSub.style.display='none';
+                }
+
+
+            }
+        }
+        aLi[i].onselectstart=function () {
+            return false;
+        }
+    }
+</script>
+</body>
+</html>
