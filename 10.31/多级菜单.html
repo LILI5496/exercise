@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多级菜单</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul, ol {
+            list-style: none
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #container .tab {
+            width: 100px;
+            height: 30px;
+            background: grey;
+            float: left;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 5px;
+        }
+
+        #container .content li {
+            width: 100px;
+            height: 30px;
+            background: #cccccc;
+            text-align: left;
+            text-indent: 5px;
+            border-bottom: 1px dashed black;
+        }
+        #container .content{
+            display: none;
+
+        }
+    </style>
+</head>
+<body>
+<ul id="container">
+    <li class="tab">link1
+        <ul class="content">
+            <li><a href="#">sublink1</a></li>
+            <li><a href="#">sublink2</a></li>
+            <li><a href="#">sublink3</a></li>
+        </ul>
+    </li>
+    <li class="tab">link2
+        <ul class="content">
+            <li><a href="#">sublink1</a></li>
+            <li><a href="#">sublink2</a></li>
+            <li><a href="#">sublink3</a></li>
+        </ul>
+    </li>
+    <li class="tab">link3
+        <ul class="content">
+            <li><a href="#">sublink1</a></li>
+            <li><a href="#">sublink2</a></li>
+            <li><a href="#">sublink3</a></li>
+        </ul>
+    </li>
+</ul>
+<script>
+    (function () {
+        var oContainer = document.getElementById('container');
+        var aLi = oContainer.getElementsByTagName('li');
+        for (var i = 0; i < aLi.length; i++) {
+            if (aLi[i].className == 'tab') {
+
+                aLi[i].onmouseover = function () {
+//                    console.log(this.children);
+                    var oContent = this.children[0];
+
+                    oContent.style.display = 'block';
+
+                }
+                aLi[i].onmouseout = function () {
+                    var oContent = this.children[0];
+
+                    oContent.style.display = 'none';
+                }
+
+            }
+        }
+
+
+    })();
+</script>
+
+</body>
+</html>
