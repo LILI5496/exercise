@@ -8,18 +8,32 @@
 
 
 <script>
+    function Min(x,y) {
+
+        if (x<y){
+            return x;
+        }else {
+            return y;
+        }
+    }
+    var x = prompt('x=');
+    var y = prompt('y=');
+    alert('Min('+x+','+y+')='+Min(x,y));
 
 
-
-
-
-
-
+    //f(x)=4*x*x+3*x+2
+/*    var x;
+    x = prompt('x=');
+    alert('f('+x+')='+f(x));
+    function f(x) {
+        x = 4*x*x+3*x+2;
+        return x;
+    }*/
 
 
 
 //!!!!!!!!四位数字ABCD 13的倍数 A=B=C
-    for(var x=1000;x>=1000&&x<=9999;x++){
+ /*   for(var x=1000;x>=1000&&x<=9999;x++){
         if(x%13 ==0 ){
             console.log(x);
             var d = x/1000;
@@ -30,7 +44,7 @@
                 document.write(x +"<br>");
             }
         }
-    }
+    }*/
 
 
 
