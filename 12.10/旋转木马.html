@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>旋转木马</title>
+    <style>
+        #state {
+            width: 1000px;
+            height: 400px;
+            background: #cccccc;
+            margin: 100px auto;
+            position: relative;
+            box-shadow: 10px 10px 5px #999;
+            -webkit-perspective: 800px;
+            perspective-origin: center -10%;
+        }
+
+        #container {
+            width: 128px;
+            height: 100px;
+            position: absolute;
+            left: 50%;
+            margin-left: -64px;
+            margin-top: 100px;
+            -webkit-transform-style: preserve-3d;
+            -webkit-transition: all .8s ease-in-out;
+        }
+
+        #container img {
+            width: 128px;
+            height: 100px;
+            position: absolute;
+            -webkit-transition: all 1s ease-in-out;
+
+        }
+
+    </style>
+</head>
+<body>
+<div id="state">
+    <div id="container">
+        <img src="img/1.jpg" alt="">
+        <img src="img/2.jpg" alt="">
+        <img src="img/3.jpg" alt="">
+        <img src="img/4.jpg" alt="">
+        <img src="img/5.jpg" alt="">
+        <img src="img/6.jpg" alt="">
+        <img src="img/7.jpg" alt="">
+        <img src="img/8.jpg" alt="">
+        <img src="img/9.jpg" alt="">
+    </div>
+</div>
+<script>
+    var translateDis = 64 / Math.tan(20 * Math.PI / 180);
+    var oContainer = document.getElementById('container');
+    var aImg = oContainer.getElementsByTagName('img');
+    //            for (var i = 0 ; i<aImg.length;i++){
+    //                aImg[i].style.WebkitTransform = 'rotateY('+-40*i+'deg) translateZ('+(translateDis+10)+'px)';
+    //            }
+
+    var j = 8;
+    var timer = null;
+    timer = setInterval(function () {
+        aImg[j].style.WebkitTransitionDelay = (9 - j) * 100 + 'ms';
+
+        aImg[j].style.WebkitTransform = 'rotateY(' + -40 * j + 'deg) translateZ(' + (translateDis + 10) + 'px)';
+        j--;
+        if (j == -1) {
+            clearInterval(timer);
+        }
+    }, 0);
+
+
+//        var j = 0;
+//        var timer = null;
+//        timer = setInterval(function () {
+//            aImg[j].style.WebkitTransitionDelay = (9 - j) * 100 + 'ms';
+//
+//            aImg[j].style.WebkitTransform = 'rotateY(' + -40 * j + 'deg) translateZ(' + (translateDis + 10) + 'px)';
+//            j++;
+//            if (j == 9) {
+//                clearInterval(timer);
+//            }
+//        }, 0);
+
+
+    var idx = 0;
+    oContainer.onclick = function () {
+        idx++;
+        oContainer.style.WebkitTransform = 'rotateY(' + -idx * 40 + 'deg)';
+    }
+</script>
+</body>
+</html>
