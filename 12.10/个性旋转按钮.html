@@ -43,6 +43,21 @@
                 -Webkit-Transform:rotateZ(0deg);
             }
         }
+        #container img:nth-child(1){
+            -webkit-transform: translateY(-200px);
+        }
+        #container img:nth-child(2){
+            -webkit-transform:  translateY(-200px);
+        }
+        #container img:nth-child(3){
+             -webkit-transform: translateY(-200px);
+        }
+        #container img:nth-child(4){
+              -webkit-transform: translateY(-200px);
+        }
+        #container img:nth-child(5){
+            -webkit-transform: translateY(-200px);
+        }
 
     </style>
 </head>
@@ -54,17 +69,20 @@
     <img src="img/open.png" alt="">
     <img src="img/prev.png" alt="">
     <img src="img/refresh.png" alt="">
-    <img id="home" src="img/home.png" alt="">
+    <img id="home"  src="img/home.png" alt="">
 
 </div>
 <script>
     var oHome = document.getElementById('home');
-    oHome.onmouseover=function () {
+    oHome.className='';
+    oHome.onclick=function () {
+        if(oHome.className == 'hide'){
             oHome.className = 'open';
+        }else {
+            oHome.className = 'hide';
+        }
     };
-    oHome.onmouseout=function () {
-        oHome.className = 'hide';
-    };
+
 </script>
 </body>
 </html>
