@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手风琴</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        #container{
+            width: 805px;
+            height: 300px;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        #container div{
+            width: 160px;
+            height: 300px;
+            border-right: 1px solid white;
+            float: left;
+            position: relative;
+            -webkit-transition: all 1s ease;
+        }
+        #container img{
+            width: 800px;
+            height: 300px;
+        }
+        #container div a{
+            width: 805px;
+            height: 30px;
+            background: rgba(0,0,0,0.5);
+            line-height: 30px;
+            position: absolute;
+            bottom:0;
+            color: white;
+        }
+        #container:hover div{
+            width:50px;
+        }
+        #container div:hover{
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div><img src="img/1.jpg" alt=""><a>1</a></div>
+        <div><img src="img/2.jpg" alt=""><a>2</a></div>
+        <div><img src="img/3.jpg" alt=""><a>3</a></div>
+        <div><img src="img/4.jpg" alt=""><a>4</a></div>
+        <div><img src="img/5.jpg" alt=""><a>5</a></div>
+    </div>
+</body>
+</html>

@@ -83,12 +83,21 @@
 //            }
 //        }, 0);
 
-
     var idx = 0;
     oContainer.onclick = function () {
         idx++;
         oContainer.style.WebkitTransform = 'rotateY(' + -idx * 40 + 'deg)';
+    };
+    setTimeout(aa,2000);
+    function aa() {
+
+
+        setInterval(function () {
+            oContainer.onclick();
+        },1000);
     }
+
+
 </script>
 </body>
 </html>
