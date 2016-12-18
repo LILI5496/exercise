@@ -77,6 +77,12 @@
             this.style.webkitTransitionDuration= '0.3s';
             this.style.opacity = 0.6;
             this.style.WebkitTransform= currTransform+'scale(2)';
+            var that = this;
+            setTimeout(function () {
+                that.style.opacity = 1;
+                that.style.transform = currTransform;
+                that.state = false;
+            },300)
         }
 
     }
